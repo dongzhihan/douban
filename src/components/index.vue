@@ -10,31 +10,31 @@
 
 </style>
 <script>
-  import api from '../js/api.js'
+  import api from '../js/api';
   import {
     Tabbar,
     TabbarItem,
-    XButton
-  } from 'vux'
+    XButton,
+  } from 'vux';
   export default {
     data() {
       return {
 
-      }
+      };
     },
     components: {
       Tabbar,
       TabbarItem,
-      XButton
+      XButton,
     },
     methods: {
       goTo(path) {
-        let data = {
+        const data = {
           pagename: path,
           password: sessionStorage["userName"]
         }
         this.$http.post(api.xxx, data, api.config).then((data) => {
-          if (data.data.Errcode == 0) {
+          if (data.data.Errcode === 0) {
             this.$router.push(`/index/${path}`);
           }
         })
