@@ -37,5 +37,7 @@ plugins: [
  'no-param-reassign':0,
  'import/newline-after-import':0,
  'import/extensions':0,
+ 'comma-dangle':0,
+ 'linebreak-style':0
 }
 }
