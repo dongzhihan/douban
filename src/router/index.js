@@ -8,19 +8,21 @@ Vue.use(Router);
 export default new Router({
   routes: [{
     path: '/',
-    name: 'index',
+    name: '主页',
     component: index,
     children: [{
         // 当 /user/:id/profile 匹配成功，
         // UserProfile 会被渲染在 User 的 <router-view> 中
       path: 'film',
-      component: film
+      component: film,
+      name: '电影'
     },
     {
         // 当 /user/:id/profile 匹配成功，
         // UserProfile 会被渲染在 User 的 <router-view> 中
       path: 'music',
-      component: music
+      component: music,
+      name: '音乐'
     }
     ]
   }],

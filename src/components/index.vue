@@ -1,7 +1,7 @@
 <template>
   <div>
-  <loading v-model="isLoading"></loading>
-    <x-header :left-options="{showBack: false}">123</x-header>
+    <loading v-model="isLoading"></loading>
+    <x-header :left-options="{showBack: false}">{{title}}</x-header>
     <view-box ref="viewBox">
       <transition :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
         <router-view class="router-view"></router-view>
@@ -58,6 +58,7 @@
         direction: state => state.www.direction
       }),
       title() {
+        console.log(this.$route.name);
         return this.$route.name;
       }
     },

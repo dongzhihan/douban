@@ -1,10 +1,34 @@
 <template>
   <div id='id'>
-    电影
-    <div style="display:flex;flex-wrap:wrap">
-    <div v-for="(item,index) in theatersList"  > {{item.title}} 
-      <div><img :src="item.images.medium" :alt="item.alt"></div>
+
+    <!--正在热映-->
+    <div>
+      <div><span class="flim-title">正在热映</span></div>
+      <div style="display:flex">
+        <div v-for="(item,index) in theatersList">
+          <div>
+            <a :href="item.alt"><img style="height:4rem" :src="item.images.medium" :alt="item.alt"></a>
+          </div>
+          <div class="flim-name">
+            <span> {{item.title}} </span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!--即将上映-->
+    <div>
+      <div><span class="flim-title">即将上映</span></div>
+      <div style="display:flex">
+        <div v-for="(item,index) in comingSoonList">
+          <div>
+            <a :href="item.alt"><img style="height:4rem" :src="item.images.medium" :alt="item.alt"></a>
+          </div>
+          <div class="flim-name">
+            <span> {{item.title}} </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -15,28 +39,35 @@
   export default {
     data() {
       return {
-        theatersList: []
+        theatersList: [],
+        comingSoonList: []
       };
     },
     mounted() {
       this.$http.get(`${api.in_theaters}?count=6`).then((films) => {
-           console.log(films.data.subjects);
         this.theatersList = films.data.subjects;
-        console.log(films.data.subjects);
-        console.log(this.theatersList);
+      });
+      this.$http.get(`${api.coming_soon}?count=6`).then((films) => {
+        this.comingSoonList = films.data.subjects;
       });
     },
     methods: {
-      getFilm() {
-
-      }
+      getFilm() {}
     }
-
   };
 
 </script>
 
 <style scoped>
+  .flim-title {
+    font-size: 0.5rem;
+    font: bold;
+    font-style: italic;
+  }
 
+  .flim-name {
+    text-align: center;
+    font-size: 0.2rem;
+  }
 
 </style>
