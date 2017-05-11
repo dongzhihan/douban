@@ -75,23 +75,14 @@
       };
     },
     mounted() {
-      this.$http.get(`${api.in_theaters}?count=6`).then((films) => {
+      this.$http.get(`${api.in_theaters}?count=6`, api.apiConfig()).then((films) => {
         this.theatersList = films.data.subjects;
-        this.startChange(this.theatersList);
       });
-     this.$http.get(`${api.coming_soon}?count=6`).then((films) => {
+      this.$http.get(`${api.coming_soon}?count=6`, api.apiConfig()).then((films) => {
         this.comingSoonList = films.data.subjects;
-        this.startChange(this.comingSoonList);
       });
     },
-    methods: {
-      startChange(list) {
-        list.map((des) => {
- /*         des.rating.average /= 2;*/
-          return des;
-        });
-      }
-    },
+    methods: {},
     components: {
       Rater
     }

@@ -5,11 +5,9 @@
  const api = {
    apiConfig() {
      return {
-       baseURL: ' https://api.douban.com',
-       timeout: 1000000,
-       transformResponse: [function (data) {
-         return data;
-       }],
+     //  baseURL: ' https://api.douban.com',
+       timeout: 1000000
+ 
      };
    },
    in_theaters: '/v2/movie/in_theaters',

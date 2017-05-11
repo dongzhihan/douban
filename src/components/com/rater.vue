@@ -1,13 +1,13 @@
 <template>
   <div id='id'>
-    <div style="display:flex">
+    <div v-show="rating" style="display:flex">
       <div v-for="(item,index) in ratingList">
         <a class="vux-rater-box is-active" style="color: rgb(204, 204, 204); margin-right: 2px; font-size: 15px; width: 15px; height: 15px; line-height: 15px;"><span class="inner">★<span class="outer" style="color: rgb(4, 190, 2); width: item+'%';" :style="{ width: item+'%' }">★</span></span>
         </a>
       </div>
       <div>    <span>{{rating}}</span></div>
     </div>
-
+     <div class="noRating" v-show="!rating"><span>暂无评分</span></div>
   </div>
 </template>
 <script>
@@ -31,7 +31,6 @@
 
         this.$set(this.ratingList, i, ((this.rating - (i * 2)) * 50));
       }
-      console.log(this.ratingList);
     }
 
   };
@@ -50,6 +49,10 @@
   .inner {
     position: relative;
     display: inline-block;
+  }
+  .noRating
+  {
+      text-align: center;
   }
 
 </style>
