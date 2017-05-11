@@ -12,7 +12,6 @@
             <a :href="item.alt"><img style="height:4rem" :src="item.images.medium" :alt="item.alt"></a>
           </div>
           <div class="flim-name">
-
             <span> {{item.title}} </span>
           </div>
           <div>
@@ -38,7 +37,6 @@
           </div>
           <div>
             <rater :rating='item.rating.average'></rater>
-
             </rater>
           </div>
         </div>

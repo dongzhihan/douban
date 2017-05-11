@@ -5,9 +5,9 @@
         <a class="vux-rater-box is-active" style="color: rgb(204, 204, 204); margin-right: 2px; font-size: 15px; width: 15px; height: 15px; line-height: 15px;"><span class="inner">★<span class="outer" style="color: rgb(4, 190, 2); width: item+'%';" :style="{ width: item+'%' }">★</span></span>
         </a>
       </div>
-      <div>    <span>{{rating}}</span></div>
+      <div> <span>{{rating}}</span></div>
     </div>
-     <div class="noRating" v-show="!rating"><span>暂无评分</span></div>
+    <div class="noRating" v-show="!rating"><span>暂无评分</span></div>
   </div>
 </template>
 <script>
@@ -23,12 +23,11 @@
       const size = this.rating / 2;
       let i = 0;
       for (i = 0; i < size - 1; i += 1) {
-        //this.ratingList.splice(i, 1, 100);
+        // this.ratingList.splice(i, 1, 100);
         this.$set(this.ratingList, i, 100);
       }
       if (size - 1 - i !== 0) {
         // this.ratingList.splice(i, 1, Math.abs((i - 1 - size) * 50))
-
         this.$set(this.ratingList, i, ((this.rating - (i * 2)) * 50));
       }
     }
@@ -50,9 +49,9 @@
     position: relative;
     display: inline-block;
   }
-  .noRating
-  {
-      text-align: center;
+
+  .noRating {
+    text-align: center;
   }
 
 </style>
