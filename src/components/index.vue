@@ -1,7 +1,11 @@
 <template>
   <div>
     <loading v-model="isLoading"></loading>
-    <x-header :left-options="{showBack: false}">{{title}}</x-header>
+    <x-header :left-options="{showBack: false}">{{title}}
+      <div slot="right" @click="goTo()">
+        <x-icon type="ios-search-strong" size="30"></x-icon>
+      </div>
+    </x-header>
     <view-box ref="viewBox">
       <transition :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
         <router-view class="router-view"></router-view>
@@ -63,16 +67,8 @@
       }
     },
     methods: {
-      goTo(path) {
-        const data = {
-          pagename: path,
-          password: sessionStorage["userName"]
-        };
-        this.$http.post(api.xxx, data, api.config).then((data) => {
-          if (data.data.Errcode === 0) {
-            this.$router.push(`/index/${path}`);
-          }
-        });
+      goTo() {
+        this.$router.push('filmSearch');
       }
     }
   };
