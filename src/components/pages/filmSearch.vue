@@ -1,6 +1,6 @@
 <template>
   <div id='id'>
-    <search  ></search>
+    <search></search>
   </div>
 </template>
 
