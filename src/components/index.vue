@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height:100%">
     <loading v-model="isLoading"></loading>
     <x-header :left-options="{showBack: false}">{{title}}
       <div slot="right" @click="goTo()">
@@ -11,7 +11,6 @@
         <router-view class="router-view"></router-view>
       </transition>
     </view-box>
-    <div style="margin-top: 1rem"> </div>
     <tabbar>
       <tabbar-item link="film">
         <img slot="icon">
