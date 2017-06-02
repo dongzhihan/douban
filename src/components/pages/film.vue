@@ -9,7 +9,7 @@
       <div style="display:flex;width:100%;overflow-x: auto;">
         <div v-for="(item,index) in theatersList">
           <div>
-            <a :href="item.alt"><img style="height:4rem" :src="item.images.medium" :alt="item.alt"></a>
+          <router-link :to="{ name: 'detail', params: { id: item.id }}"><img style="height:4rem" :src="item.images.small" :alt="item.alt"></router-link>   
           </div>
           <div class="flim-name">
             <span> {{item.title}} </span>
@@ -30,7 +30,7 @@
       <div style="display:flex;width:100%;overflow-x: auto;">
         <div v-for="(item,index) in comingSoonList">
           <div>
-            <a :href="item.alt"><img style="height:4rem" :src="item.images.medium" :alt="item.alt"></a>
+            <a :href="item.alt"><img style="height:4rem" :src="item.images.small" :alt="item.alt"></a>
           </div>
           <div class="flim-name">
             <span> {{item.title}} </span>

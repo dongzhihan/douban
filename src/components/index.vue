@@ -12,11 +12,11 @@
       </transition>
     </view-box>
     <tabbar>
-      <tabbar-item link="film">
+      <tabbar-item link="/film">
         <img slot="icon">
         <span slot="label">电影</span>
       </tabbar-item>
-      <tabbar-item link="music">
+      <tabbar-item link="/music">
         <img slot="icon">
         <span slot="label">图书</span>
       </tabbar-item>

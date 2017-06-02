@@ -7,6 +7,7 @@ const api = {
       timeout: 1000000
     };
   },
+  getfilmDetail: '/v2/movie/subject/',
   searchFilm: '/v2/movie/search?q=',
   in_theaters: '/v2/movie/in_theaters',
   coming_soon: '/v2/movie/coming_soon',
