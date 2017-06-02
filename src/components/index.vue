@@ -1,5 +1,5 @@
 <template>
-  <div style="height:400px">
+  <div style="height:500px">
     <loading v-model="isLoading"></loading>
     <x-header :left-options="{showBack: false}">{{title}}
       <div slot="right" @click="goTo()">
