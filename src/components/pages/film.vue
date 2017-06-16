@@ -7,9 +7,9 @@
         <div style="float:right; font-size: 0.5rem;"><a href="">更多</a> </div>
       </div>
       <div style="display:flex;width:100%;overflow-x: auto;">
-        <div v-for="(item,index) in theatersList">
+        <div class="filmList" v-for="(item,index) in theatersList">
           <div>
-          <router-link :to="{ name: 'detail', params: { id: item.id }}"><img style="height:4rem" :src="item.images.small" :alt="item.alt"></router-link>   
+            <router-link :to="{ name: 'detail', params: { id: item.id }}"><img style="height:4rem" :src="item.images.small" :alt="item.alt"></router-link>
           </div>
           <div class="flim-name">
             <span> {{item.title}} </span>
@@ -28,7 +28,7 @@
         <div style="float:right; font-size: 0.5rem;"><a href="">更多</a> </div>
       </div>
       <div style="display:flex;width:100%;overflow-x: auto;">
-        <div v-for="(item,index) in comingSoonList">
+        <div class="filmList" v-for="(item,index) in comingSoonList">
           <div>
             <a :href="item.alt"><img style="height:4rem" :src="item.images.small" :alt="item.alt"></a>
           </div>
@@ -98,6 +98,10 @@
   .flim-name {
     text-align: center;
     font-size: 0.2rem;
+  }
+
+  .filmList {
+    margin-left: 0.3rem;
   }
 
 </style>

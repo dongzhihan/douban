@@ -27,10 +27,10 @@
 
 <script>
   import api from '../../js/api.js';
-  import Rater from '../com/rater.vue';
+
   export default {
     components: {
-      Rater
+
     },
     data() {
       return {

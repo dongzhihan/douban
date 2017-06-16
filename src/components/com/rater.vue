@@ -15,7 +15,7 @@
     props: ['rating'],
     data() {
       return {
-        ratingList: [0, 0, 0, 0, 0]
+        ratingList: [0, 0, 0, 0, 0],
       };
     },
     // 初始化两种办法设置评分
