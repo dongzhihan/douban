@@ -1,7 +1,7 @@
 <template>
   <div id='id'>
     <search v-model='searshText' @on-submit="searshFilm"></search>
-    <div>
+    <div style="height:500px">
       <div style="display:flex;position:relative;" v-for="(item,index) in filmList">
         <div>
           <a :href="item.alt"><img style="height:4rem;width:3rem" :src="item.images.small" :alt="item.alt"></a>
