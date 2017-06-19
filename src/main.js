@@ -6,9 +6,7 @@ import 'mint-ui/lib/style.css';
 import axios from 'axios';
 import Vuex from 'vuex';
 import $ from 'jquery';
-import {
-  Field,
-} from 'mint-ui';
+import { Field } from 'mint-ui';
 import ElementUI from 'element-ui';
 import Vue from 'vue';
 import FastClick from 'fastclick';
@@ -24,7 +22,8 @@ const store = new Vuex.Store({});
 store.registerModule('www', {
   state: {
     isLoading: false,
-    direction: 'forward'
+    direction: 'forward',
+    isMenu: true
   },
   mutations: {
     updateLoadingStatus(state, payload) {
@@ -32,6 +31,9 @@ store.registerModule('www', {
     },
     updateDirection(state, payload) {
       state.direction = payload.direction;
+    },
+    updateMenu(state, payload) {
+      state.isMenu = payload.isMenu;
     }
   }
 });
@@ -43,10 +45,23 @@ router.beforeEach((to, from, next) => {
   store.commit('updateLoadingStatus', {
     isLoading: true
   });
+  if (to.name === 'detail') {
+    store.commit('updateMenu', {
+      isMenu: false
+    });
+  } else {
+    store.commit('updateMenu', {
+      isMenu: true
+    });
+  }
   const toIndex = history.getItem(to.path);
   const fromIndex = history.getItem(from.path);
   if (toIndex) {
-    if (toIndex > fromIndex || !fromIndex || (toIndex === '0' && fromIndex === '0')) {
+    if (
+      toIndex > fromIndex ||
+      !fromIndex ||
+      (toIndex === '0' && fromIndex === '0')
+    ) {
       store.commit('updateDirection', {
         direction: 'forward'
       });
@@ -72,8 +87,7 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-
-router.afterEach((to) => {
+router.afterEach(to => {
   store.commit('updateLoadingStatus', {
     isLoading: false
   });

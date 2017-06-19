@@ -11,7 +11,7 @@
         <router-view class="router-view"></router-view>
       </transition>
     </view-box>
-    <tabbar>
+    <tabbar v-show="$store.state.www.isMenu">
       <tabbar-item link="/film">
         <img slot="icon">
         <span slot="label">电影</span>
