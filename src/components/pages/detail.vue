@@ -1,6 +1,6 @@
 <template>
-  <div id='id' >
-    <div >
+  <div id='id'>
+    <div>
       <!--基本信息-->
       <div style="float:left;margin-left:0.3rem">
         <div>
@@ -73,11 +73,9 @@
       };
     },
     created() {
-      console.log(this.$store.state)
       this.$http.get(`${api.getfilmDetail}${this.$route.params.id}`, api.apiConfig()).then((films) => {
-        console.log(films.data)
+        console.log(films.data);
         this.film = films.data;
-
       });
       // document.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb9ac217246beca88&redirect_uri=http://api.yundaili.com/api/loginSure&response_type=code&scope=snsapi_userinfo&state=123&connect_redirect=1#wechat_redirect"
     }
