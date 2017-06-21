@@ -2,7 +2,7 @@
   <div id='id'>
     <div>
       <!--基本信息-->
-      <div style="float:left;margin-left:0.3rem">
+      <div class="fatherDiv" style="float:right;margin-left:0.3rem;">
         <div>
           <span class="title">{{film.title}}</span>
         </div>
@@ -21,16 +21,18 @@
         </div>
       </div>
       <!--图片-->
-      <div style="float:right;margin-top:20px">
-        <img style="height:5rem;width:3rem" :src="film.images.large" alt="">
+      <div style="float:left;margin-top:10px">
+        <img style="margin-left:0.5rem;height:4rem;width:3rem" :src="film.images.large" alt="">
       </div>
     </div>
     <!--演员-->
     <div style="clear:both"></div>
-    <div style="display:flex;width:100%;overflow-x:auto">
+    <div style="display:flex;width:100%;overflow-x:auto;">
       <div v-for="(cast,index) in film.casts">
-        <img :src="cast.avatars.small">
-        <span>{{cast.name}}</span>
+        <div style="width:3rem;margin-left:0.5rem">
+          <img :src="cast.avatars.small"></br>
+          <span>{{cast.name}}</span>
+        </div>
       </div>
     </div>
     <divider>you want?</divider>

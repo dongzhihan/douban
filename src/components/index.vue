@@ -1,7 +1,7 @@
 <template>
   <div >
     <loading v-model="isLoading"></loading>
-    <x-header :left-options="{showBack: false}">{{title}}
+    <x-header style="background: lightgreen;" :left-options="{showBack: false}">{{title}}
       <div slot="right" @click="goTo()">
         <x-icon type="ios-search-strong" size="30"></x-icon>
       </div>
