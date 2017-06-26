@@ -13,6 +13,14 @@ import FastClick from 'fastclick';
 import VueRouter from 'vue-router';
 import App from './App';
 import router from './router/index.js';
+import 'muse-components/styles/base.less'; // 加载基础的样式
+// muse ui 部分
+import { tabs, tab } from 'muse-components/tabs';
+import appBar from 'muse-components/appBar';
+Vue.component(tabs.name, tabs);
+Vue.component(tab.name, tab);
+Vue.component(appBar.name, appBar);
+//----------------------
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.use(Vuex);
@@ -45,7 +53,7 @@ router.beforeEach((to, from, next) => {
   store.commit('updateLoadingStatus', {
     isLoading: true
   });
-  if (to.name === 'detail') {
+  if (to.name === 'detail' || to.path === '/filmSearch') {
     store.commit('updateMenu', {
       isMenu: false
     });

@@ -27,10 +27,19 @@ let webpackConfig = {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      jquery: path.resolve(__dirname, '../node_modules/jquery/src/jquery')
+      jquery: path.resolve(__dirname, '../node_modules/jquery/src/jquery'),
+      'muse-components': 'muse-ui/src'
     }
   },
   module: {
+    loaders: [
+      // ...
+      {
+        test: /muse-ui.src.*?js$/,
+        loader: 'babel'
+      }
+    ],
+
     rules: [
       {
         test: /\.vue$/,

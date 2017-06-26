@@ -1,17 +1,28 @@
 <template>
-  <div >
+  <div>
     <loading v-model="isLoading"></loading>
-    <x-header style="background: lightgreen;" :left-options="{showBack: false}">{{title}}
+
+    <mu-appbar :title="title">
       <div slot="right" @click="goTo()">
         <x-icon type="ios-search-strong" size="30"></x-icon>
       </div>
-    </x-header>
+    </mu-appbar>
+    <!--   <x-header style="background: lightgreen;" :left-options="{showBack: false}">{{title}}
+      <div slot="right" @click="goTo()">
+        <x-icon type="ios-search-strong" size="30"></x-icon>
+      </div>
+    </x-header>-->
     <view-box ref="viewBox">
       <transition :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
         <router-view class="router-view"></router-view>
       </transition>
     </view-box>
-    <tabbar v-show="$store.state.www.isMenu">
+    <mu-tabs v-show="$store.state.www.isMenu" style="position:fixed;bottom:0">
+      <mu-tab href="#/film" value="tab1" icon="电影" />
+      <mu-tab href="#/music" value="tab2" icon="音乐" />
+      <mu-tab value="tab3" icon="图书" />
+    </mu-tabs>
+    <!--   <tabbar v-show="$store.state.www.isMenu">
       <tabbar-item link="/film">
         <img slot="icon">
         <span slot="label">电影</span>
@@ -24,14 +35,14 @@
         <img slot="icon">
         <span slot="label">音乐</span>
       </tabbar-item>
-    </tabbar>
+    </tabbar>-->
   </div>
 </template>
 
 <script>
   import {
-    Tabbar,
     TabbarItem,
+    Tabbar,
     XHeader,
     ViewBox,
     Loading
@@ -48,8 +59,8 @@
       };
     },
     components: {
-      Tabbar,
       TabbarItem,
+      Tabbar,
       XHeader,
       ViewBox,
       Loading
