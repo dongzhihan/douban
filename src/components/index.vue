@@ -18,7 +18,7 @@
       </transition>
     </view-box>
 
-    <mu-bottom-nav style="position:fixed;bottom:0" :value="bottomNav" shift @change="handleChange">
+    <mu-bottom-nav style="position:fixed;bottom:0"   shift v-show="$store.state.www.isMenu">
       <mu-bottom-nav-item to="/film" value="电影" title="电影" icon="ondemand_video"/>
       <mu-bottom-nav-item to="/music" value="music" title="Music" icon="music_note"/>
       <mu-bottom-nav-item value="books" title="Books" icon="books"/>

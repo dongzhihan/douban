@@ -62,6 +62,7 @@ router.beforeEach((to, from, next) => {
   store.commit('updateLoadingStatus', {
     isLoading: true
   });
+  console.log(to)
   if (to.name === 'detail' || to.path === '/filmSearch') {
     store.commit('updateMenu', {
       isMenu: false
