@@ -6,21 +6,30 @@ import 'mint-ui/lib/style.css';
 import axios from 'axios';
 import Vuex from 'vuex';
 import $ from 'jquery';
+
 import { Field } from 'mint-ui';
 import ElementUI from 'element-ui';
+
 import Vue from 'vue';
+
 import FastClick from 'fastclick';
 import VueRouter from 'vue-router';
+import 'muse-components/styles/base.less'; // 加载基础的样式
 import App from './App';
 import router from './router/index.js';
-import 'muse-components/styles/base.less'; // 加载基础的样式
 // muse ui 部分
+
 import { tabs, tab } from 'muse-components/tabs';
 import appBar from 'muse-components/appBar';
+import { bottomNav, bottomNavItem } from 'muse-components/bottomNav';
+Vue.component(bottomNavItem.name, bottomNavItem);
+Vue.component(bottomNav.name, bottomNav);
 Vue.component(tabs.name, tabs);
 Vue.component(tab.name, tab);
 Vue.component(appBar.name, appBar);
 //----------------------
+
+
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.use(Vuex);

@@ -17,11 +17,13 @@
         <router-view class="router-view"></router-view>
       </transition>
     </view-box>
-    <mu-tabs v-show="$store.state.www.isMenu" style="position:fixed;bottom:0">
-      <mu-tab href="#/film" value="tab1" icon="电影" />
-      <mu-tab href="#/music" value="tab2" icon="音乐" />
-      <mu-tab value="tab3" icon="图书" />
-    </mu-tabs>
+
+    <mu-bottom-nav style="position:fixed;bottom:0" :value="bottomNav" shift @change="handleChange">
+      <mu-bottom-nav-item to="/film" value="电影" title="电影" icon="ondemand_video"/>
+      <mu-bottom-nav-item to="/music" value="music" title="Music" icon="music_note"/>
+      <mu-bottom-nav-item value="books" title="Books" icon="books"/>
+
+    </mu-bottom-nav>
     <!--   <tabbar v-show="$store.state.www.isMenu">
       <tabbar-item link="/film">
         <img slot="icon">
