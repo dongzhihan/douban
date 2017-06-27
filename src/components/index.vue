@@ -22,7 +22,6 @@
       <mu-bottom-nav-item to="/film" value="电影" title="电影" icon="ondemand_video"/>
       <mu-bottom-nav-item to="/music" value="music" title="Music" icon="music_note"/>
       <mu-bottom-nav-item value="books" title="Books" icon="books"/>
-
     </mu-bottom-nav>
     <!--   <tabbar v-show="$store.state.www.isMenu">
       <tabbar-item link="/film">

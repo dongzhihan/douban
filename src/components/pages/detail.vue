@@ -50,8 +50,6 @@
 </template>
 
 <script>
-  import api from '../../js/api.js';
-  import Rater from '../com/rater.vue';
   import {
     Search,
     Divider,
@@ -59,6 +57,9 @@
     Flexbox,
     FlexboxItem
   } from 'vux';
+  import api from '../../js/api.js';
+  import Rater from '../com/rater.vue';
+
   export default {
     components: {
       Rater,
