@@ -6,7 +6,7 @@ import 'mint-ui/lib/style.css';
 import axios from 'axios';
 import Vuex from 'vuex';
 // import $ from 'jquery';
-
+import bottom from './components/com/bottom.vue';
 import { Field } from 'mint-ui';
 // import ElementUI from 'element-ui';
 
@@ -28,9 +28,8 @@ Vue.component(tabs.name, tabs);
 Vue.component(tab.name, tab);
 Vue.component(appBar.name, appBar);
 //----------------------
-
-
-//Vue.use(ElementUI);
+Vue.component('bottom', bottom);
+// Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 require('babel-polyfill');
@@ -116,7 +115,7 @@ FastClick.attach(document.body);
 // ///注册
 Vue.component(Field.name, Field);
 // ////////////////////jquery 引入
-//Vue.prototype.$jquery = $;
+// Vue.prototype.$jquery = $;
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
