@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" style="width:100%">
     <router-view></router-view>
+
   </div>
 </template>
 
@@ -13,7 +14,7 @@
 
 <style lang="less">
   @import '~vux/src/styles/reset.less';
-   
+
 
   body {
     background-color: #fbf9fe;

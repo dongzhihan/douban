@@ -2,7 +2,7 @@
   <div id='id'>
 
     <!--正在热映-->
-    <div>
+     <div style="height:7rem">
       <div><span class="flim-title">正在热映</span>
         <div style="float:right; font-size: 0.5rem;"><a href="">更多</a> </div>
       </div>
@@ -23,7 +23,7 @@
     </div>
 
     <!--即将上映-->
-    <div>
+    <div style="height:7rem">
       <div><span class="flim-title">即将上映</span>
         <div style="float:right; font-size: 0.5rem;"><a href="">更多</a> </div>
       </div>
@@ -93,6 +93,7 @@
     font-size: 0.5rem;
     font: bold;
     font-style: italic;
+    margin-left: 0.5rem;
   }
 
   .flim-name {
@@ -103,5 +104,11 @@
   .filmList {
     margin-left: 0.3rem;
   }
-
+.download-app {
+    padding: 0 0 20px 0;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 15px;
+}
 </style>

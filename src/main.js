@@ -30,7 +30,7 @@ Vue.component(appBar.name, appBar);
 //----------------------
 
 
-Vue.use(ElementUI);
+//Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 require('babel-polyfill');
