@@ -5,10 +5,10 @@ import 'lib-flexible';
 import 'mint-ui/lib/style.css';
 import axios from 'axios';
 import Vuex from 'vuex';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import { Field } from 'mint-ui';
-import ElementUI from 'element-ui';
+// import ElementUI from 'element-ui';
 
 import Vue from 'vue';
 
@@ -62,7 +62,6 @@ router.beforeEach((to, from, next) => {
   store.commit('updateLoadingStatus', {
     isLoading: true
   });
-  console.log(to)
   if (to.name === 'detail' || to.path === '/filmSearch') {
     store.commit('updateMenu', {
       isMenu: false
@@ -117,7 +116,7 @@ FastClick.attach(document.body);
 // ///注册
 Vue.component(Field.name, Field);
 // ////////////////////jquery 引入
-Vue.prototype.$jquery = $;
+//Vue.prototype.$jquery = $;
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
