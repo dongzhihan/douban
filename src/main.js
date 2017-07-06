@@ -2,14 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'element-ui/lib/theme-default/index.css';
 import 'lib-flexible';
-import 'mint-ui/lib/style.css';
 import axios from 'axios';
 import Vuex from 'vuex';
 // import $ from 'jquery';
 import bottom from './components/com/bottom.vue';
-import {
-  Field
-} from 'mint-ui';
+
 // import ElementUI from 'element-ui';
 
 import Vue from 'vue';

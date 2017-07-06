@@ -31,7 +31,6 @@
         this.$set(this.ratingList, i, ((this.rating - (i * 2)) * 50));
       }
     }
-
   };
 
 </script>
